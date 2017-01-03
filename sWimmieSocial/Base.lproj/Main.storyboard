@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="40" width="283" height="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZa-Tp-UGe" customClass="FancyBtn" customModule="sWimmieSocial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="283" height="37"/>
@@ -99,6 +99,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signinBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eyr-iD-Znq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -122,6 +125,10 @@
                             <constraint firstItem="Ob3-eP-hhb" firstAttribute="top" secondItem="6J0-UG-5sk" secondAttribute="bottom" constant="20" id="x51-XL-SwJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="tL1-pY-whg" id="ARm-b4-36X"/>
+                        <outlet property="passwordField" destination="6Ba-OR-Lo2" id="sBv-5K-Dtv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
