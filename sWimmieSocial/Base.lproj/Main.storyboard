@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,112 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-UG-5sk" customClass="fancyView" customModule="sWimmieSocial" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-Wimmie" translatesAutoresizingMaskIntoConstraints="NO" id="BYf-cS-H68">
+                                        <rect key="frame" x="127" y="15" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="EYr-em-7Te"/>
+                                            <constraint firstAttribute="width" constant="120" id="dke-Vn-UUC"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="BYf-cS-H68" firstAttribute="centerY" secondItem="6J0-UG-5sk" secondAttribute="centerY" id="QeR-N0-qBH"/>
+                                    <constraint firstAttribute="height" constant="150" id="q11-8O-UzJ"/>
+                                    <constraint firstItem="BYf-cS-H68" firstAttribute="centerX" secondItem="6J0-UG-5sk" secondAttribute="centerX" id="vM3-DX-w9E"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-Vi-i2L">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you signin for the first time, an account will be created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET6-zN-0IV">
+                                        <rect key="frame" x="8" y="8" width="359" height="59"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1r2-1U-FIw"/>
+                                    <constraint firstAttribute="bottom" secondItem="ET6-zN-0IV" secondAttribute="bottom" constant="8" id="2n3-K1-xsc"/>
+                                    <constraint firstItem="ET6-zN-0IV" firstAttribute="leading" secondItem="qHd-Vi-i2L" secondAttribute="leading" constant="8" id="D6k-D2-UWd"/>
+                                    <constraint firstAttribute="trailing" secondItem="ET6-zN-0IV" secondAttribute="trailing" constant="8" id="XdG-CM-1lw"/>
+                                    <constraint firstItem="ET6-zN-0IV" firstAttribute="top" secondItem="qHd-Vi-i2L" secondAttribute="top" constant="8" id="yJH-AR-84r"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob3-eP-hhb">
+                                <rect key="frame" x="16" y="170" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0v-lP-r9g" customClass="RoundBtn" customModule="sWimmieSocial" customModuleProvider="target">
+                                <rect key="frame" x="150" y="220" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="NON-yi-sxq"/>
+                                    <constraint firstAttribute="height" constant="75" id="XGP-pi-vyh"/>
+                                </constraints>
+                                <state key="normal" image="f"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-cG-UUi">
+                                <rect key="frame" x="46" y="349" width="283" height="117"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tL1-pY-whg" customClass="FancyField" customModule="sWimmieSocial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="25"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ba-OR-Lo2" customClass="FancyField" customModule="sWimmieSocial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="283" height="25"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZa-Tp-UGe" customClass="FancyBtn" customModule="sWimmieSocial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80" width="283" height="37"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HFZ-cG-UUi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0C1-a0-M7W"/>
+                            <constraint firstItem="6J0-UG-5sk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4ic-w6-Oj0"/>
+                            <constraint firstAttribute="trailing" secondItem="qHd-Vi-i2L" secondAttribute="trailing" id="ApC-48-MBH"/>
+                            <constraint firstItem="HFZ-cG-UUi" firstAttribute="top" secondItem="c0v-lP-r9g" secondAttribute="bottom" constant="54" id="Df8-OO-goy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HFZ-cG-UUi" secondAttribute="trailing" constant="30" id="FVP-b7-bKH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qHd-Vi-i2L" secondAttribute="bottom" id="TOZ-AR-Efz"/>
+                            <constraint firstItem="6J0-UG-5sk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tqe-gL-AVZ"/>
+                            <constraint firstItem="Ob3-eP-hhb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VYJ-RR-g5B"/>
+                            <constraint firstItem="c0v-lP-r9g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YUm-Ll-D9c"/>
+                            <constraint firstItem="c0v-lP-r9g" firstAttribute="top" secondItem="Ob3-eP-hhb" secondAttribute="bottom" constant="30" id="ZJp-Oa-ap9"/>
+                            <constraint firstAttribute="trailing" secondItem="6J0-UG-5sk" secondAttribute="trailing" id="cf7-7j-Mee"/>
+                            <constraint firstItem="qHd-Vi-i2L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k0Z-sN-WYX"/>
+                            <constraint firstItem="HFZ-cG-UUi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="vcC-rN-5xj"/>
+                            <constraint firstItem="Ob3-eP-hhb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wc2-7a-zTS"/>
+                            <constraint firstItem="Ob3-eP-hhb" firstAttribute="top" secondItem="6J0-UG-5sk" secondAttribute="bottom" constant="20" id="x51-XL-SwJ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.199999999999999" y="32.833583208395808"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo-Wimmie" width="300" height="300"/>
+        <image name="f" width="352" height="328"/>
+    </resources>
 </document>
