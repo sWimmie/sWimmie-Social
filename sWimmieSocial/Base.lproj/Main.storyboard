@@ -66,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0v-lP-r9g" customClass="RoundBtn" customModule="sWimmieSocial" customModuleProvider="target">
-                                <rect key="frame" x="150" y="220" width="75" height="75"/>
+                                <rect key="frame" x="150" y="220.5" width="75" height="75"/>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="0.87" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="NON-yi-sxq"/>
@@ -74,11 +74,11 @@
                                 </constraints>
                                 <state key="normal" image="f"/>
                                 <connections>
-                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PE0-cL-H9W"/>
+                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEj-RU-AHd"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-cG-UUi">
-                                <rect key="frame" x="46" y="349" width="283" height="117"/>
+                                <rect key="frame" x="46" y="349.5" width="283" height="117"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tL1-pY-whg" customClass="FancyField" customModule="sWimmieSocial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="25"/>
@@ -105,6 +105,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw7-Cm-2dt" customClass="RoundBtn" customModule="sWimmieSocial" customModuleProvider="target">
+                                <rect key="frame" x="254" y="221" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="9Sc-7a-O7q"/>
+                                    <constraint firstAttribute="width" constant="75" id="rSL-k4-Yah"/>
+                                </constraints>
+                                <state key="normal" image="google.png"/>
+                                <connections>
+                                    <action selector="googleBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6E9-LC-WFr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -112,10 +124,12 @@
                             <constraint firstItem="6J0-UG-5sk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4ic-w6-Oj0"/>
                             <constraint firstAttribute="trailing" secondItem="qHd-Vi-i2L" secondAttribute="trailing" id="ApC-48-MBH"/>
                             <constraint firstItem="HFZ-cG-UUi" firstAttribute="top" secondItem="c0v-lP-r9g" secondAttribute="bottom" constant="54" id="Df8-OO-goy"/>
+                            <constraint firstItem="Zw7-Cm-2dt" firstAttribute="top" secondItem="Ob3-eP-hhb" secondAttribute="bottom" constant="30.5" id="EVT-jl-zAb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HFZ-cG-UUi" secondAttribute="trailing" constant="30" id="FVP-b7-bKH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qHd-Vi-i2L" secondAttribute="bottom" id="TOZ-AR-Efz"/>
                             <constraint firstItem="6J0-UG-5sk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tqe-gL-AVZ"/>
                             <constraint firstItem="Ob3-eP-hhb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VYJ-RR-g5B"/>
+                            <constraint firstItem="Zw7-Cm-2dt" firstAttribute="leading" secondItem="c0v-lP-r9g" secondAttribute="trailing" constant="29" id="Xyu-7U-QpC"/>
                             <constraint firstItem="c0v-lP-r9g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YUm-Ll-D9c"/>
                             <constraint firstItem="c0v-lP-r9g" firstAttribute="top" secondItem="Ob3-eP-hhb" secondAttribute="bottom" constant="30" id="ZJp-Oa-ap9"/>
                             <constraint firstAttribute="trailing" secondItem="6J0-UG-5sk" secondAttribute="trailing" id="cf7-7j-Mee"/>
@@ -138,5 +152,6 @@
     <resources>
         <image name="Logo-Wimmie" width="300" height="300"/>
         <image name="f" width="352" height="328"/>
+        <image name="google.png" width="18" height="18"/>
     </resources>
 </document>

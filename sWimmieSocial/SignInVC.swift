@@ -10,15 +10,18 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import GoogleSignIn
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var emailField: FancyField!
     @IBOutlet weak var passwordField: FancyField!
+    @IBOutlet weak var signInButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +46,28 @@ class SignInVC: UIViewController {
         }
     }
     
+    @IBAction func googleBtnTapped(_ sender: Any) {
+        
+       let signIn = GIDSignIn.sharedInstance()
+        signIn?.signOut()
+        signIn?.signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            let alert = UIAlertController(title: "Error in registration", message: "\(error)", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in})
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: { _ in })
+            return
+        }
+        
+        let authentication = user.authentication
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
+        fireBaseAuth(credential)
+    }
+    
+    
     @IBAction func signinBtnTapped(_ sender: Any) {
         if let email = emailField.text, let psw = passwordField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: psw, completion: { (user, error) in
@@ -61,7 +86,6 @@ class SignInVC: UIViewController {
         }
         
     }
-    
     
     func fireBaseAuth(_ credential: FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
