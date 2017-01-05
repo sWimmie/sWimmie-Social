@@ -68,6 +68,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - SwiftKeychainWrapper (3.0.0)
   - TwitterCore (2.5.0):
     - Fabric
   - TwitterKit (2.5.0):
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GoogleSignIn
+  - SwiftKeychainWrapper
   - TwitterKit
 
 SPEC CHECKSUMS:
@@ -102,9 +104,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  SwiftKeychainWrapper: aa69884eb623a6f7d644921bbf58c8cee416a9e6
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: 5dc0a33d364b300a8926dc2881daa3bee57677e9
+PODFILE CHECKSUM: 28fe4bb34f1692b4b1ee59e3b7fa778db73aa05d
 
 COCOAPODS: 1.1.1

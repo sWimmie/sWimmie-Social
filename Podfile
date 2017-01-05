@@ -14,5 +14,6 @@ target 'sWimmieSocial' do
   pod 'GoogleSignIn'
   pod 'Fabric'
   pod 'TwitterKit'
+  pod 'SwiftKeychainWrapper'
 
 end
