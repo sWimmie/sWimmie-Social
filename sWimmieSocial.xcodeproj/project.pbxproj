@@ -151,6 +151,7 @@
 				27CECB641E1AED6600A3CF64 /* Resources */,
 				EF55093F2F5A0C65D20937AF /* [CP] Embed Pods Frameworks */,
 				0C928F119A66522EB8F1D90A /* [CP] Copy Pods Resources */,
+				27CECB8D1E1E671F00A3CF64 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -225,6 +226,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sWimmieSocial/Pods-sWimmieSocial-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		27CECB8D1E1E671F00A3CF64 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5b294d7bb9d2e229c8f3b22f27f518e5f3a1f25b 103745380321b394bc9f39354421e4e396055684a9a11c86c3ae0efa63a4158a";
 		};
 		2EBA4172361D01C8770625CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

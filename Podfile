@@ -12,5 +12,7 @@ target 'sWimmieSocial' do
   pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
   pod 'GoogleSignIn'
+  pod 'Fabric'
+  pod 'TwitterKit'
 
 end

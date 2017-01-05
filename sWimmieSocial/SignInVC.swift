@@ -11,6 +11,8 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
+import Fabric
+import TwitterKit
 
 class SignInVC: UIViewController, GIDSignInUIDelegate {
     
@@ -46,6 +48,20 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
         }
     }
     
+    @IBAction func twitterBtnTapped(_ sender: Any) {
+        Twitter.sharedInstance().logIn() { (result, error) in
+            if error != nil {
+                print ("Unable to authenticate with Twitter - \(error?.localizedDescription)")
+            } else {
+                print ("User authenticated with Twitter")
+                let credentials = FIRTwitterAuthProvider.credential(withToken: (result?.authToken)!, secret: (result?.authTokenSecret)!)
+                self.fireBaseAuth(credentials)
+            }
+        }
+        
+    }
+    
+    
     @IBAction func googleBtnTapped(_ sender: Any) {
         
        let signIn = GIDSignIn.sharedInstance()
@@ -66,6 +82,8 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
         let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
         fireBaseAuth(credential)
     }
+    
+    
     
     
     @IBAction func signinBtnTapped(_ sender: Any) {

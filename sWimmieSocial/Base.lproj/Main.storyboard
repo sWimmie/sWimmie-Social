@@ -106,15 +106,27 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw7-Cm-2dt" customClass="RoundBtn" customModule="sWimmieSocial" customModuleProvider="target">
-                                <rect key="frame" x="254" y="221" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="254" y="221.5" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.92941176470588238" alpha="0.87" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="9Sc-7a-O7q"/>
                                     <constraint firstAttribute="width" constant="75" id="rSL-k4-Yah"/>
                                 </constraints>
-                                <state key="normal" image="google.png"/>
+                                <state key="normal" image="google"/>
                                 <connections>
                                     <action selector="googleBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6E9-LC-WFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siG-tp-dDp" customClass="RoundBtn" customModule="sWimmieSocial" customModuleProvider="target">
+                                <rect key="frame" x="46" y="220.5" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="BjQ-IA-eYM"/>
+                                    <constraint firstAttribute="width" constant="75" id="S8q-GZ-6xR"/>
+                                </constraints>
+                                <state key="normal" image="twitter"/>
+                                <connections>
+                                    <action selector="twitterBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msT-Wt-ty3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,6 +138,8 @@
                             <constraint firstItem="HFZ-cG-UUi" firstAttribute="top" secondItem="c0v-lP-r9g" secondAttribute="bottom" constant="54" id="Df8-OO-goy"/>
                             <constraint firstItem="Zw7-Cm-2dt" firstAttribute="top" secondItem="Ob3-eP-hhb" secondAttribute="bottom" constant="30.5" id="EVT-jl-zAb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HFZ-cG-UUi" secondAttribute="trailing" constant="30" id="FVP-b7-bKH"/>
+                            <constraint firstItem="c0v-lP-r9g" firstAttribute="leading" secondItem="siG-tp-dDp" secondAttribute="trailing" constant="29" id="IVL-r8-HW1"/>
+                            <constraint firstItem="siG-tp-dDp" firstAttribute="top" secondItem="Ob3-eP-hhb" secondAttribute="bottom" constant="29.5" id="LVv-AY-pI8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qHd-Vi-i2L" secondAttribute="bottom" id="TOZ-AR-Efz"/>
                             <constraint firstItem="6J0-UG-5sk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tqe-gL-AVZ"/>
                             <constraint firstItem="Ob3-eP-hhb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VYJ-RR-g5B"/>
@@ -152,6 +166,7 @@
     <resources>
         <image name="Logo-Wimmie" width="300" height="300"/>
         <image name="f" width="352" height="328"/>
-        <image name="google.png" width="18" height="18"/>
+        <image name="google" width="352" height="328"/>
+        <image name="twitter" width="352" height="328"/>
     </resources>
 </document>
