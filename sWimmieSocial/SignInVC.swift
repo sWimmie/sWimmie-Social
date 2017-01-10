@@ -66,11 +66,6 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     @IBAction func googleBtnTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().signIn()
-        
-//        let signIn = GIDSignIn.sharedInstance()
-//
-//        signIn?.signOut()
-//        signIn?.signIn()
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
@@ -83,23 +78,10 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             let credentials = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
             self.fireBaseAuth(credentials)
             if let user = user {
-                self.completeSignIn(id: user.userID)
+                let userData = ["provider": "Google"]
+                self.completeSignIn(id: user.userID, userData: userData)
             }
         }
-//        if let error = error {
-//            let alert = UIAlertController(title: "Error in registration", message: "\(error)", preferredStyle: .alert)
-//            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in})
-//            alert.addAction(defaultAction)
-//            self.present(alert, animated: true, completion: { _ in })
-//            return
-//        }
-//        
-//        let authentication = user.authentication
-//        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
-//        self.fireBaseAuth(credential)
-//        if let user = user {
-//            self.completeSignIn(id: user.userID)
-//        }
     }
     
     @IBAction func signinBtnTapped(_ sender: Any) {
@@ -108,7 +90,8 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 if error == nil {
                     print("User autheticated with Firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: psw, completion: { (user, error) in
@@ -117,7 +100,8 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                         } else {
                             print("Succesfully authenticated with firebase")
                             if let user = user {
-                                self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                             }
                         }
                     })
@@ -134,14 +118,16 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             } else {
                 print("Succesfully authenticated with Firebase")
                 if let user = user {
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
                 
             }
         })
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         KeychainWrapper.standard.set(id, forKey: KEY_UID)
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }

@@ -20,6 +20,9 @@
 		27CECB8C1E1BBA7600A3CF64 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CECB8B1E1BBA7600A3CF64 /* FancyBtn.swift */; };
 		27CECB8F1E1E853F00A3CF64 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CECB8E1E1E853F00A3CF64 /* FeedVC.swift */; };
 		27CECB921E1EF24600A3CF64 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CECB911E1EF24600A3CF64 /* CircleView.swift */; };
+		27CECB941E203E6600A3CF64 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CECB931E203E6600A3CF64 /* PostCell.swift */; };
+		27CECB971E2430B600A3CF64 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CECB961E2430B600A3CF64 /* DataServices.swift */; };
+		27CECB991E25832900A3CF64 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CECB981E25832900A3CF64 /* Post.swift */; };
 		F2890C71B4E8B20771C2E53B /* Pods_sWimmieSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58630A1C806F10B05230B2D /* Pods_sWimmieSocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		27CECB8E1E1E853F00A3CF64 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		27CECB901E1E87B900A3CF64 /* sWimmieSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sWimmieSocial.entitlements; sourceTree = "<group>"; };
 		27CECB911E1EF24600A3CF64 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		27CECB931E203E6600A3CF64 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		27CECB961E2430B600A3CF64 /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		27CECB981E25832900A3CF64 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3788429BEA86432C7136D4FA /* Pods-sWimmieSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sWimmieSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sWimmieSocial/Pods-sWimmieSocial.debug.xcconfig"; sourceTree = "<group>"; };
 		405B44971237D3D8A834C437 /* Pods-sWimmieSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sWimmieSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-sWimmieSocial/Pods-sWimmieSocial.release.xcconfig"; sourceTree = "<group>"; };
 		C58630A1C806F10B05230B2D /* Pods_sWimmieSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sWimmieSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +84,7 @@
 		27CECB681E1AED6600A3CF64 /* sWimmieSocial */ = {
 			isa = PBXGroup;
 			children = (
-				27CECB901E1E87B900A3CF64 /* sWimmieSocial.entitlements */,
+				27CECB951E24307B00A3CF64 /* Services */,
 				27CECB841E1BB55600A3CF64 /* Util */,
 				27CECB7F1E1AEE6400A3CF64 /* Modal */,
 				27CECB7E1E1AEE5D00A3CF64 /* View */,
@@ -87,6 +93,7 @@
 				27CECB6D1E1AED6600A3CF64 /* Main.storyboard */,
 				27CECB721E1AED6600A3CF64 /* LaunchScreen.storyboard */,
 				27CECB751E1AED6600A3CF64 /* Info.plist */,
+				27CECB901E1E87B900A3CF64 /* sWimmieSocial.entitlements */,
 				27CECB7B1E1AEE3E00A3CF64 /* GoogleService-Info.plist */,
 				27CECB801E1BB37F00A3CF64 /* Assets.xcassets */,
 			);
@@ -110,6 +117,7 @@
 				27CECB891E1BB92300A3CF64 /* FancyField.swift */,
 				27CECB8B1E1BBA7600A3CF64 /* FancyBtn.swift */,
 				27CECB911E1EF24600A3CF64 /* CircleView.swift */,
+				27CECB931E203E6600A3CF64 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 		27CECB7F1E1AEE6400A3CF64 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				27CECB981E25832900A3CF64 /* Post.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -127,6 +136,14 @@
 				27CECB851E1BB57200A3CF64 /* Constants.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		27CECB951E24307B00A3CF64 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27CECB961E2430B600A3CF64 /* DataServices.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		440CB1F58B1FF5C1E71D31A1 /* Pods */ = {
@@ -293,12 +310,15 @@
 				27CECB921E1EF24600A3CF64 /* CircleView.swift in Sources */,
 				27CECB8A1E1BB92300A3CF64 /* FancyField.swift in Sources */,
 				27CECB831E1BB4D100A3CF64 /* fancyView.swift in Sources */,
+				27CECB991E25832900A3CF64 /* Post.swift in Sources */,
 				27CECB881E1BB74800A3CF64 /* RoundBtn.swift in Sources */,
 				27CECB6C1E1AED6600A3CF64 /* SignInVC.swift in Sources */,
+				27CECB971E2430B600A3CF64 /* DataServices.swift in Sources */,
 				27CECB8F1E1E853F00A3CF64 /* FeedVC.swift in Sources */,
 				27CECB6A1E1AED6600A3CF64 /* AppDelegate.swift in Sources */,
 				27CECB861E1BB57200A3CF64 /* Constants.swift in Sources */,
 				27CECB8C1E1BBA7600A3CF64 /* FancyBtn.swift in Sources */,
+				27CECB941E203E6600A3CF64 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
